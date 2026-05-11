@@ -1,12 +1,15 @@
+import { lazy, Suspense } from 'react'
 import { Toaster } from 'sonner'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import Gallery from './components/Gallery'
-import Reviews from './components/Reviews'
-import BookingForm from './components/BookingForm'
 import Footer from './components/Footer'
+
+// Lazy-loaded sections (better performance)
+const Hero = lazy(() => import('./components/Hero'))
+const About = lazy(() => import('./components/About'))
+const Services = lazy(() => import('./components/Services'))
+const Gallery = lazy(() => import('./components/Gallery'))
+const Reviews = lazy(() => import('./components/Reviews'))
+const BookingForm = lazy(() => import('./components/BookingForm'))
 
 export default function App() {
   return (
@@ -21,15 +24,20 @@ export default function App() {
           },
         }}
       />
+
       <Navbar />
+
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <Gallery />
-        <Reviews />
-        <BookingForm />
+        <Suspense fallback={<div />}>
+          <Hero />
+          <About />
+          <Services />
+          <Gallery />
+          <Reviews />
+          <BookingForm />
+        </Suspense>
       </main>
+
       <Footer />
     </div>
   )

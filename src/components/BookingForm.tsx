@@ -122,7 +122,7 @@ export default function BookingForm() {
             </p>
             <button
               onClick={() => setSubmitted(false)}
-              className="bg-pink hover:bg-pink-hover text-white font-black text-sm px-6 py-3 rounded-full transition-all duration-200 uppercase tracking-wide"
+              className="bg-pink hover:bg-pink-hover text-bg font-black text-sm px-6 py-3 rounded-full transition-all duration-200 uppercase tracking-wide"
             >
               Submit Another Inquiry
             </button>
@@ -339,7 +339,7 @@ export default function BookingForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-pink hover:bg-pink-hover disabled:opacity-60 disabled:cursor-not-allowed text-white font-black text-base px-8 py-4 rounded-full transition-all duration-200 glow-pink flex items-center justify-center gap-2 uppercase tracking-wide"
+              className="w-full bg-pink hover:bg-pink-hover disabled:opacity-60 disabled:cursor-not-allowed text-bg font-black text-base px-8 py-4 rounded-full transition-all duration-200 glow-pink flex items-center justify-center gap-2 uppercase tracking-wide"
             >
               {loading ? (
                 <>

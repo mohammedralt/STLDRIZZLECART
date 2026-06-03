@@ -31,7 +31,7 @@ export default function About() {
               </div>
               {/* Floating badge */}
               <div className="absolute bottom-0 right-0 bg-pink rounded-3xl px-5 py-3 glow-pink shadow-xl">
-                <div className="font-display text-white text-sm">Since 2023 🍩</div>
+                <div className="font-display text-bg text-sm">Since 2023 🍩</div>
               </div>
             </div>
           </motion.div>
@@ -89,7 +89,7 @@ export default function About() {
             <div className="pt-2">
               <a
                 href="#book"
-                className="inline-flex bg-surface border border-pink/30 hover:bg-pink text-pink hover:text-white font-black text-sm px-6 py-3 rounded-full transition-all duration-200 uppercase tracking-wide"
+                className="inline-flex bg-surface border border-pink/30 hover:bg-pink text-pink hover:text-bg font-black text-sm px-6 py-3 rounded-full transition-all duration-200 uppercase tracking-wide"
               >
                 Join Our Journey →
               </a>

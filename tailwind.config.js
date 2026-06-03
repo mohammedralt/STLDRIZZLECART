@@ -4,16 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#120b08',
-        surface: '#1c130f',
-        'surface-2': '#2d1b14',
+        // Swig-inspired warm red theme
+        bg: '#E23744',
+        surface: '#D32F3C',
+        'surface-2': '#B82733',
+        // `pink` token repurposed as the gold "drizzle" accent (pops on red, matches logo script)
         pink: {
-          DEFAULT: '#ff4d6d',
-          hover: '#ff758f',
-          light: '#ffb3c1',
+          DEFAULT: '#FFC93C',
+          hover: '#FFD75E',
+          light: '#FFE08A',
         },
-        cream: '#fdf5e6',
-        muted: '#a68b81',
+        cream: '#FBF3E2',
+        muted: '#F4D2C5',
       },
       fontFamily: {
         display: ['"Lilita One"', 'cursive'],

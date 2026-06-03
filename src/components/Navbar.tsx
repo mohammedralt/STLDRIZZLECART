@@ -1,23 +1,28 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { label: 'Menu', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Reviews', href: '#reviews' },
+  { label: 'Menu', href: '/#services', external: true },
+  { label: 'About', href: '/#about', external: true },
+  { label: 'Gallery', href: '/gallery', external: false },
+  { label: 'Reviews', href: '/reviews', external: false },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close mobile menu on route change
+  useEffect(() => { setMobileOpen(false) }, [location.pathname])
 
   return (
     <header
@@ -26,41 +31,55 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Three-column layout matching Swig: logo | links | cta */}
         <div className="grid grid-cols-3 items-center h-16">
 
-          {/* Logo — left */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-full bg-cream/10 border border-cream/30 flex items-center justify-center overflow-hidden group-hover:border-pink/60 transition-colors">
-              <span className="font-display text-[10px] text-cream leading-none">STL</span>
-            </div>
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group">
+            <img
+              src="/logo.jpg"
+              alt="STL Drizzle Cart"
+              className="w-10 h-10 rounded-full object-cover"
+            />
             <span className="font-display text-lg text-cream tracking-wide hidden sm:block">
               STL DRIZZLE
             </span>
-          </a>
+          </Link>
 
           {/* Nav links — centered */}
           <nav className="hidden md:flex items-center justify-center gap-8">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
+            {links.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`text-sm font-bold tracking-widest uppercase transition-colors duration-200 ${
+                    location.pathname === link.href
+                      ? 'text-pink'
+                      : 'text-cream/80 hover:text-cream'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
 
-          {/* Book Now CTA — right */}
+          {/* Book Now — right */}
           <div className="flex items-center justify-end gap-3">
             <a
-              href="#book"
+              href="/#book"
               className="hidden md:inline-flex border-2 border-cream text-cream hover:bg-cream hover:text-bg font-black text-sm px-5 py-2 rounded-full transition-all duration-200 uppercase tracking-wide"
             >
               Book Now
             </a>
-            {/* Mobile hamburger */}
             <button
               className="md:hidden text-cream p-2"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -82,19 +101,29 @@ export default function Navbar() {
             className="md:hidden bg-surface border-t border-surface-2 overflow-hidden"
           >
             <div className="flex flex-col px-6 py-4 gap-4">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {links.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`text-sm font-bold tracking-widest uppercase transition-colors ${
+                      location.pathname === link.href ? 'text-pink' : 'text-cream/80 hover:text-cream'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <a
-                href="#book"
-                onClick={() => setMobileOpen(false)}
+                href="/#book"
                 className="border-2 border-cream text-cream font-black text-sm px-5 py-3 rounded-full text-center mt-2 uppercase tracking-wide hover:bg-cream hover:text-bg transition-all"
               >
                 Book Now

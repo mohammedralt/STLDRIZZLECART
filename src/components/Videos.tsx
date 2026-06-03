@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 const TIKTOK_VIDEOS = [
   'https://www.tiktok.com/@stldrizzle/video/7633194493142945038',
   'https://www.tiktok.com/@stldrizzle/video/7627286037072530702',
+  'https://www.tiktok.com/@stldrizzle/video/7596439847145901343',
 ]
 
 function videoId(url: string): string {

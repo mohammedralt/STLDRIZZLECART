@@ -15,7 +15,7 @@ const categories = [
     img: '/gallery-2.jpg',
   },
   {
-    title: 'Waffles & More',
+    title: 'Bubble Waffles',
     description: 'Golden waffles with custom toppings',
     img: '/gallery-3.jpg',
   },
@@ -57,7 +57,7 @@ const featured = [
 export default function Services() {
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  function scroll(dir: 'left' | 'right') {
+function scroll(dir: 'left' | 'right') {
     if (!scrollRef.current) return
     scrollRef.current.scrollBy({ left: dir === 'right' ? 320 : -320, behavior: 'smooth' })
   }

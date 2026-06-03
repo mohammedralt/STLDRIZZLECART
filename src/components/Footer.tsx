@@ -1,14 +1,15 @@
 import { Instagram, Mail, MapPin, Music2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   const navLinks = [
-    { label: 'Menu', href: '#services' },
-    { label: 'About', href: '#about' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Reviews', href: '#reviews' },
-    { label: 'Book Now', href: '#book' },
+    { label: 'Menu', href: '/#services', route: false },
+    { label: 'About', href: '/#about', route: false },
+    { label: 'Gallery', href: '/gallery', route: true },
+    { label: 'Reviews', href: '/reviews', route: true },
+    { label: 'Book Now', href: '/#book', route: false },
   ]
 
   const socialLinks = [
@@ -36,17 +37,24 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2 space-y-5">
-            <div>
-              <div className="font-display text-3xl text-cream tracking-wide leading-none mb-1">
-                STL DRIZZLE
-              </div>
-              <div className="text-pink text-xs font-black uppercase tracking-widest">
-                Portable Dessert Cart · St. Louis, MO
+            <div className="flex items-center gap-4">
+              <img
+                src="/logo.jpg"
+                alt="STL Drizzle Cart"
+                className="w-16 h-16 rounded-full object-cover shrink-0"
+              />
+              <div>
+                <div className="font-display text-3xl text-cream tracking-wide leading-none mb-1">
+                  STL DRIZZLE
+                </div>
+                <div className="text-pink text-xs font-black uppercase tracking-widest">
+                  Portable Dessert Cart · St. Louis, MO
+                </div>
               </div>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
               St. Louis's premier portable dessert cart. Bringing warm mini pancakes and ice cream
-              donuts to events of all sizes — licensed, insured, and made fresh.
+              donuts to events of all sizes - licensed, insured, and made fresh.
             </p>
             <div className="flex items-center gap-3">
               {socialLinks.map((s) => (
@@ -70,12 +78,21 @@ export default function Footer() {
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-bold text-muted hover:text-cream transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
+                  {link.route ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm font-bold text-muted hover:text-cream transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm font-bold text-muted hover:text-cream transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

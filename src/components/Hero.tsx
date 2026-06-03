@@ -25,11 +25,21 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32 lg:py-0 w-full min-h-screen flex flex-col justify-center">
         <div className="max-w-[480px]">
 
-          {/* Location eyebrow — matches Swig's subtle location tag */}
+          {/* Logo */}
+          <motion.img
+            src="/logo.jpg"
+            alt="STL Drizzle Cart"
+            className="w-24 h-24 rounded-full object-cover mb-6 shadow-2xl"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          />
+
+          {/* Location eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="flex items-center gap-2 mb-6"
           >
             <MapPin size={13} className="text-cream/70" />

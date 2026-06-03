@@ -31,7 +31,7 @@ export default function About() {
               </div>
               {/* Floating badge */}
               <div className="absolute bottom-0 right-0 bg-pink rounded-3xl px-5 py-3 glow-pink shadow-xl">
-                <div className="font-display text-bg text-sm">Since 2023 🍩</div>
+                <div className="font-display text-bg text-sm">Since 2025 🍩</div>
               </div>
             </div>
           </motion.div>
@@ -53,7 +53,7 @@ export default function About() {
 
             <div className="space-y-4 text-muted text-lg leading-relaxed">
               <p>
-                STL Drizzle Cart was born from a simple idea — bring joy to St. Louis one delicious treat at a time. Founded by siblings{' '}
+                STL Drizzle Cart was born from a simple idea - bring joy to St. Louis one delicious treat at a time. Founded by siblings{' '}
                 <strong className="text-cream">Umair and Aleena Hussain</strong>, what started as a passion project has grown into one of the city's most beloved portable dessert experiences.
               </p>
               <p>

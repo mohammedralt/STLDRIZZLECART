@@ -23,14 +23,14 @@ export default function Hero() {
       </div>
 
       {/* Left — text content */}
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32 lg:py-0 w-full min-h-screen flex flex-col justify-center">
-        <div className="max-w-[480px]">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-28 lg:py-0 w-full min-h-screen flex flex-col justify-center">
+        <div className="max-w-[480px] mx-auto lg:mx-0 text-center lg:text-left">
 
           {/* Logo */}
           <motion.img
             src="/logo.jpg"
             alt="STL Drizzle Cart"
-            className="w-24 h-24 rounded-full object-cover mb-6 shadow-2xl"
+            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover mb-6 shadow-2xl mx-auto lg:mx-0"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -41,7 +41,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center gap-2 mb-6"
+            className="flex items-center justify-center lg:justify-start gap-2 mb-6"
           >
             <MapPin size={13} className="text-cream/70" />
             <span className="text-cream/70 text-sm font-bold uppercase tracking-[0.2em]">
@@ -49,36 +49,31 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Main headline — Swig uses a 3-line stacked headline */}
+          {/* Main headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-cream leading-none mb-4"
-            style={{ fontSize: 'clamp(3rem, 8vw, 5.5rem)' }}
+            style={{ fontSize: 'clamp(2.4rem, 8vw, 5.5rem)' }}
           >
             Home of the<br />
-            <span
-              className="text-pink"
-              style={{ fontStyle: 'italic' }}
-            >
-              Original
-            </span>
+            <span className="text-pink" style={{ fontStyle: 'italic' }}>Original</span>
             <br />
             Drizzle Cart
           </motion.h1>
 
-          {/* Subtitle — Swig's "Soda Meets Cream" is short and punchy */}
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-cream/85 text-lg sm:text-xl font-bold tracking-wide mb-10"
+            className="text-cream/85 text-base sm:text-xl font-bold tracking-wide mb-8"
           >
             Sweetness Meets Every Event
           </motion.p>
 
-          {/* CTA — Swig uses an outlined button on the red hero, not filled */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,14 +87,14 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Trust line — Licensed & Insured · Family Owned · St. Louis Based */}
+          {/* Trust line */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="mt-10 text-cream/50 text-sm font-bold tracking-wide"
+            className="mt-8 text-cream/50 text-xs sm:text-sm font-bold tracking-wide leading-relaxed"
           >
-            Licensed &amp; Insured&nbsp;&nbsp;·&nbsp;&nbsp;Family Owned&nbsp;&nbsp;·&nbsp;&nbsp;St. Louis Based
+            Licensed &amp; Insured · Family Owned · St. Louis Based
           </motion.p>
         </div>
       </div>

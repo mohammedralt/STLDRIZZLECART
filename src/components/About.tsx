@@ -8,12 +8,12 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 overflow-hidden">
+    <section id="about" className="relative py-16 lg:py-24 overflow-hidden">
       {/* Background blob */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-pink/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left — Founders photo */}
           <motion.div
             initial="hidden"
@@ -22,7 +22,7 @@ export default function About() {
             variants={fadeUp}
           >
             <div className="relative pb-4 pr-4">
-              <div className="rounded-4xl overflow-hidden h-[520px]">
+              <div className="rounded-4xl overflow-hidden h-[320px] sm:h-[440px] lg:h-[520px]">
                 <img
                   src="/aleenaumair.PNG"
                   alt="STL Drizzle Cart founders Umair and Aleena with the cart"
@@ -46,7 +46,7 @@ export default function About() {
           >
             <div>
               <span className="text-pink text-xs font-black uppercase tracking-widest">Our Story</span>
-              <h2 className="font-display text-5xl sm:text-6xl text-cream mt-2 leading-tight">
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-cream mt-2 leading-tight">
                 A Sweet Family Adventure
               </h2>
             </div>

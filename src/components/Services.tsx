@@ -73,11 +73,11 @@ function scroll(dir: 'left' | 'right') {
             className="text-center mb-12"
           >
             <span className="text-pink text-xs font-black uppercase tracking-widest">What We Serve</span>
-            <h2 className="font-display text-5xl sm:text-6xl text-bg mt-2">Explore Our Menu</h2>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-bg mt-2">Explore Our Menu</h2>
           </motion.div>
 
           {/* Horizontal tile grid — 4 columns desktop, 2 mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
             {categories.map((cat, i) => (
               <motion.a
                 key={cat.title}
@@ -133,7 +133,7 @@ function scroll(dir: 'left' | 'right') {
               transition={{ duration: 0.6 }}
             >
               <span className="text-pink text-xs font-black uppercase tracking-widest">Signature Creations</span>
-              <h2 className="font-display text-5xl sm:text-6xl text-cream mt-2">Fan Favorites</h2>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-cream mt-2">Fan Favorites</h2>
             </motion.div>
 
             {/* Scroll arrows — desktop only */}

@@ -8,9 +8,10 @@ export default function Hero() {
       {/* Right half — product photo bleeds to the viewport edge (Swig-style) */}
       <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[58%] pointer-events-none">
         <motion.img
-          src="/gallery-2.jpg"
+          src="/IMG_8011.jpeg"
           alt="STL Drizzle Cart signature dessert"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: 'center 60%' }}
           initial={{ scale: 1.06 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.4, ease: 'easeOut' }}

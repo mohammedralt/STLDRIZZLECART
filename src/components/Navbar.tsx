@@ -33,8 +33,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 items-center h-16">
 
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          {/* Logo — left */}
+          <Link to="/" className="flex items-center gap-2">
             <img
               src="/logo.jpg"
               alt="STL Drizzle Cart"
@@ -45,31 +45,12 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Nav links — centered */}
+          {/* Nav links — center */}
           <nav className="hidden md:flex items-center justify-center gap-8">
-            {links.map((link) =>
-              link.external ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`text-sm font-bold tracking-widest uppercase transition-colors duration-200 ${
-                    location.pathname === link.href
-                      ? 'text-pink'
-                      : 'text-cream/80 hover:text-cream'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
+            <a href="/#services" className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors duration-200">Menu</a>
+            <a href="/#about" className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors duration-200">About</a>
+            <Link to="/gallery" className={`text-sm font-bold tracking-widest uppercase transition-colors duration-200 ${location.pathname === '/gallery' ? 'text-pink' : 'text-cream/80 hover:text-cream'}`}>Gallery</Link>
+            <Link to="/reviews" className={`text-sm font-bold tracking-widest uppercase transition-colors duration-200 ${location.pathname === '/reviews' ? 'text-pink' : 'text-cream/80 hover:text-cream'}`}>Reviews</Link>
           </nav>
 
           {/* Book Now — right */}

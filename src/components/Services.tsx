@@ -7,22 +7,20 @@ const categories = [
   {
     title: 'Mini Pancakes',
     description: 'Bite-sized & fluffy, drizzled to order',
-    img: '/gallery-1.jpg',
+    img: '/minipancakes.jpeg',
+    imgStyle: { objectPosition: '95% 82%', transform: 'scale(1.3)', transformOrigin: '55% 22%' },
   },
   {
     title: 'Ice Cream Donuts',
     description: 'Glazed donuts loaded with premium ice cream',
-    img: '/gallery-2.jpg',
+    img: '/ice-cream-donut.JPG',
+    imgStyle: { objectPosition: '25% 60%', transform: 'scale(1.3)', transformOrigin: '25% 60%' },
   },
   {
     title: 'Bubble Waffles',
     description: 'Golden waffles with custom toppings',
-    img: '/gallery-3.jpg',
-  },
-  {
-    title: 'Event Packages',
-    description: 'Full-service dessert experience for any crowd',
-    img: '/gallery-4.jpg',
+    img: '/bubblewaffles.JPEG',
+    imgStyle: { objectPosition: '20% center' },
   },
 ]
 
@@ -79,7 +77,7 @@ function scroll(dir: 'left' | 'right') {
           </motion.div>
 
           {/* Horizontal tile grid — 4 columns desktop, 2 mobile */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {categories.map((cat, i) => (
               <motion.a
                 key={cat.title}
@@ -97,6 +95,7 @@ function scroll(dir: 'left' | 'right') {
                     src={cat.img}
                     alt={cat.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    style={cat.imgStyle}
                   />
                 </div>
                 <div>

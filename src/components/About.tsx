@@ -22,11 +22,11 @@ export default function About() {
             variants={fadeUp}
           >
             <div className="relative pb-4 pr-4">
-              <div className="rounded-4xl overflow-hidden">
+              <div className="rounded-4xl overflow-hidden h-[520px]">
                 <img
-                  src="/founders.jpg"
+                  src="/aleenaumair.PNG"
                   alt="STL Drizzle Cart founders Umair and Aleena with the cart"
-                  className="w-full h-auto block"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               {/* Floating badge */}

@@ -293,11 +293,12 @@ export default function BookingForm() {
             {/* Row 6 — Services */}
             <div>
               <label className={labelClass}>Services Requested *</label>
-              <div className="grid sm:grid-cols-3 gap-3">
+              <div className="grid sm:grid-cols-2 gap-3">
                 {[
                   { value: 'Mini Pancakes', emoji: '🥞' },
                   { value: 'Ice Cream Donuts', emoji: '🍩' },
-                  { value: 'Both', emoji: '✨' },
+                  { value: 'Bubble Waffles', emoji: '🧇' },
+                  { value: 'All', emoji: '✨' },
                 ].map(({ value, emoji }) => {
                   const checked = watch('services')?.includes(value)
                   return (

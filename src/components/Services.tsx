@@ -7,13 +7,13 @@ const categories = [
   {
     title: 'Mini Pancakes',
     description: 'Bite-sized & fluffy, drizzled to order',
-    img: '/minipancakes.jpeg',
-    imgStyle: { objectPosition: '95% 82%', transform: 'scale(1.3)', transformOrigin: '55% 22%' },
+    img: '/minipancakes.png',
+    imgStyle: { objectPosition: '60% 55%', transform: 'scale(1.1)', transformOrigin: '60% 55%' },
   },
   {
     title: 'Ice Cream Donuts',
     description: 'Glazed donuts loaded with premium ice cream',
-    img: '/ice-cream-donut.JPG',
+    img: '/IMG_9675.jpeg',
     imgStyle: { objectPosition: '25% 60%', transform: 'scale(1.3)', transformOrigin: '25% 60%' },
   },
   {

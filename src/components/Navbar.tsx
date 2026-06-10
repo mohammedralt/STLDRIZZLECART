@@ -25,39 +25,39 @@ export default function Navbar() {
   useEffect(() => { setMobileOpen(false) }, [location.pathname])
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-surface/95 backdrop-blur-md shadow-md shadow-black/20' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-3 items-center h-16">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-bg/90 backdrop-blur-md shadow-md shadow-black/20' : 'bg-transparent'}`}>
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-center h-14">
 
-          {/* Logo — left */}
-          <Link to="/" className="flex items-center gap-2">
-            <img
-              src="/logo.jpg"
-              alt="STL Drizzle Cart"
-              className="w-10 h-10 rounded-full object-cover"
-            />
-            <span className="font-display text-lg text-cream tracking-wide hidden sm:block">
-              STL DRIZZLE
-            </span>
+          {/* Logo + Nav links — centered as one group */}
+          <div className="hidden md:flex items-center gap-6">
+            <Link to="/" className="flex items-center gap-2 shrink-0">
+              <img
+                src="/logo.jpg"
+                alt="STL Drizzle Cart"
+                className="w-8 h-8 rounded-full object-cover"
+              />
+              <span className="font-display font-black text-base text-cream tracking-wide">
+                STL DRIZZLE
+              </span>
+            </Link>
+            <a href="/#services" className="text-sm font-bold tracking-wide text-cream/85 hover:text-cream transition-colors duration-200">Menu</a>
+            <a href="/#about" className="text-sm font-bold tracking-wide text-cream/85 hover:text-cream transition-colors duration-200">About</a>
+            <Link to="/gallery" className={`text-sm font-bold tracking-wide transition-colors duration-200 ${location.pathname === '/gallery' ? 'text-pink' : 'text-cream/85 hover:text-cream'}`}>Gallery</Link>
+            <Link to="/reviews" className={`text-sm font-bold tracking-wide transition-colors duration-200 ${location.pathname === '/reviews' ? 'text-pink' : 'text-cream/85 hover:text-cream'}`}>Reviews</Link>
+          </div>
+
+          {/* Mobile logo */}
+          <Link to="/" className="md:hidden flex items-center gap-2">
+            <img src="/logo.jpg" alt="STL Drizzle Cart" className="w-8 h-8 rounded-full object-cover" />
+            <span className="font-display font-black text-base text-cream">STL DRIZZLE</span>
           </Link>
 
-          {/* Nav links — center */}
-          <nav className="hidden md:flex items-center justify-center gap-8">
-            <a href="/#services" className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors duration-200">Menu</a>
-            <a href="/#about" className="text-sm font-bold tracking-widest uppercase text-cream/80 hover:text-cream transition-colors duration-200">About</a>
-            <Link to="/gallery" className={`text-sm font-bold tracking-widest uppercase transition-colors duration-200 ${location.pathname === '/gallery' ? 'text-pink' : 'text-cream/80 hover:text-cream'}`}>Gallery</Link>
-            <Link to="/reviews" className={`text-sm font-bold tracking-widest uppercase transition-colors duration-200 ${location.pathname === '/reviews' ? 'text-pink' : 'text-cream/80 hover:text-cream'}`}>Reviews</Link>
-          </nav>
-
-          {/* Book Now — right */}
-          <div className="flex items-center justify-end gap-3">
+          {/* Book Now — absolute far right */}
+          <div className="absolute right-0 flex items-center gap-3">
             <a
               href="/#book"
-              className="hidden md:inline-flex border-2 border-cream text-cream hover:bg-cream hover:text-bg font-black text-sm px-5 py-2 rounded-full transition-all duration-200 uppercase tracking-wide"
+              className="hidden md:inline-flex border-2 border-cream text-cream hover:bg-cream hover:text-bg font-black text-xs px-4 py-1.5 rounded-full transition-all duration-200 uppercase tracking-wide"
             >
               Book Now
             </a>

@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
 
       {/* Right half — product photo bleeds to the viewport edge (Swig-style) */}
-      <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[58%] pointer-events-none">
+      <div className="absolute top-0 left-0 right-0 bottom-0 w-full pointer-events-none">
         <motion.img
           src="/IMG_8011.jpeg"
           alt="STL Drizzle Cart signature dessert"
@@ -17,31 +17,22 @@ export default function Hero() {
           transition={{ duration: 1.4, ease: 'easeOut' }}
         />
         {/* Gradient: bleeds from the red left side into the image */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/50 lg:via-bg/30 to-transparent" />
+        <div className="absolute inset-0 bg-bg/60" />
         {/* Bottom fade on mobile so text is readable */}
         <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/60 to-transparent lg:hidden" />
       </div>
 
       {/* Left — text content */}
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-28 lg:py-0 w-full min-h-screen flex flex-col justify-center">
-        <div className="max-w-[480px] mx-auto lg:mx-0 text-center lg:text-left">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-28 lg:py-0 w-full min-h-screen flex flex-col justify-center items-center">
 
-          {/* Logo */}
-          <motion.img
-            src="/logo.jpg"
-            alt="STL Drizzle Cart"
-            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover mb-6 shadow-2xl mx-auto lg:mx-0"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-          />
+<div className="max-w-[480px] text-center">
 
           {/* Location eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center justify-center lg:justify-start gap-2 mb-6"
+            className="flex items-center justify-center gap-2 mb-6 mt-16"
           >
             <MapPin size={13} className="text-cream/70" />
             <span className="text-cream/70 text-sm font-bold uppercase tracking-[0.2em]">
@@ -60,7 +51,7 @@ export default function Hero() {
             Home of the<br />
             <span className="text-pink" style={{ fontStyle: 'italic' }}>Original</span>
             <br />
-            Drizzle Cart
+            <span className="block mt-3">Drizzle Cart</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -100,20 +91,22 @@ export default function Hero() {
       </div>
 
       {/* Scroll caret */}
-      <motion.div
+      <motion.button
+        onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
+        aria-label="Scroll down"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-          className="text-cream/40"
+          className="text-cream/60 hover:text-cream transition-colors"
         >
-          <ChevronDown size={28} />
+          <ChevronDown size={32} />
         </motion.div>
-      </motion.div>
+      </motion.button>
     </section>
   )
 }

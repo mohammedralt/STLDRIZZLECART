@@ -18,7 +18,7 @@ export default {
         muted: '#F4D2C5',
       },
       fontFamily: {
-        display: ['"Lilita One"', 'cursive'],
+        display: ['"Poppins"', 'sans-serif'],
         body: ['"Nunito"', 'sans-serif'],
       },
       borderRadius: {

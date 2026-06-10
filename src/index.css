@@ -30,7 +30,8 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Lilita One', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
   }
 
   .text-gradient {

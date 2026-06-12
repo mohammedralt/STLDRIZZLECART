@@ -49,7 +49,7 @@ export default function Hero() {
             style={{ fontSize: 'clamp(2.4rem, 8vw, 5.5rem)' }}
           >
             Home of the<br />
-            <span className="text-pink" style={{ fontStyle: 'italic' }}>Original</span>
+            <span className="text-pink" style={{ fontStyle: 'italic', marginLeft: '-1.2rem' }}>Original</span>
             <br />
             <span className="block mt-3">Drizzle Cart</span>
           </motion.h1>
@@ -96,7 +96,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 cursor-pointer"
         aria-label="Scroll down"
       >
         <motion.div

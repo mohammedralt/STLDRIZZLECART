@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { Loader2, CheckCircle } from 'lucide-react'
-import { supabase } from '../lib/supabase'
 
 type FormData = {
   fullName: string
@@ -44,30 +43,7 @@ export default function BookingForm() {
     setLoading(true)
 
     try {
-      // 1. Save to Supabase
-      const { error: dbError } = await supabase.from('bookings').insert([
-        {
-          full_name: data.fullName,
-          email: data.email,
-          phone: data.phone,
-          preferred_contact: data.preferredContact,
-          event_type: data.eventType,
-          event_date: data.eventDate,
-          start_time: data.startTime,
-          duration: data.duration,
-          estimated_guests: Number(data.estimatedGuests),
-          event_location: data.eventLocation,
-          services: data.services,
-          notes: data.notes || null,
-        },
-      ])
-
-      if (dbError) {
-        console.error('Supabase error:', dbError)
-        // Don't block — still try Formspree
-      }
-
-      // 2. Send via Formspree
+      // Send via Formspree
       const formspreeBody = new FormData()
       formspreeBody.append('_subject', `New STL Drizzle Inquiry: ${data.fullName}`)
       formspreeBody.append('_replyto', data.email)

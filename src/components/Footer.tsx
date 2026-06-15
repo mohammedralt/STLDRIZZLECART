@@ -15,7 +15,7 @@ export default function Footer() {
   const socialLinks = [
     {
       label: 'Instagram',
-      href: 'https://www.instagram.com/stldrizzle/',
+      href: 'https://www.instagram.com/stldrizzlecart/',
       icon: <Instagram size={17} />,
     },
     {

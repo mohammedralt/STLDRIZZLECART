@@ -24,7 +24,7 @@ export default function About() {
             <div className="relative pb-4 pr-4">
               <div className="rounded-4xl overflow-hidden h-[320px] sm:h-[440px] lg:h-[520px]">
                 <img
-                  src="/aleenaumair.PNG"
+                  src="/aleenaumair.png"
                   alt="STL Drizzle Cart founders Umair and Aleena with the cart"
                   className="w-full h-full object-cover object-center"
                 />
@@ -57,7 +57,7 @@ export default function About() {
                 <strong className="text-cream">Umair and Aleena Hussain</strong>, what started as a passion project has grown into one of the city's most beloved portable dessert experiences.
               </p>
               <p>
-                From intimate backyard birthdays to large corporate events, we show up with warm mini pancakes drizzled to perfection and indulgent ice cream donuts that keep guests coming back for more.
+                From small backyard birthdays to large corporate events, we show up with warm mini pancakes drizzled to perfection and indulgent ice cream donuts that keep guests coming back for more.
               </p>
               <p>
                 We're fully licensed and insured, so you can focus on making memories while we handle the sweetness.

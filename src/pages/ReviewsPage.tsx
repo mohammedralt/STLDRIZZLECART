@@ -37,6 +37,13 @@ const reviews = [
     initials: 'AS',
     color: 'from-yellow-400 to-orange-500',
   },
+  {
+    name: 'Nick T.',
+    event: 'Car Meet',
+    text: 'The energy they brought to our car meet was unreal. The crowd was locked in from the moment they pulled up — everyone was hyped and the desserts had people going back for more all night. This is exactly the vibe we needed. Definitely locking them in for every future event.',
+    initials: 'NT',
+    color: 'from-blue-400 to-blue-600',
+  },
 ]
 
 const StarRow = () => (

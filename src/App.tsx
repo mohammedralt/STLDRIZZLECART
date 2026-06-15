@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { Toaster } from 'sonner'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -24,6 +24,24 @@ const toastStyle = {
 }
 
 function HomePage() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const sectionId = (location.state as { scrollTo?: string } | null)?.scrollTo
+    if (!sectionId) return
+    window.history.replaceState({}, '')
+    const tryScroll = (attempts = 0) => {
+      const el = document.getElementById(sectionId)
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 60
+        window.scrollTo({ top, behavior: 'smooth' })
+      } else if (attempts < 10) {
+        setTimeout(() => tryScroll(attempts + 1), 100)
+      }
+    }
+    setTimeout(tryScroll, 50)
+  }, [location.state])
+
   return (
     <>
       <Hero />
